@@ -1,0 +1,112 @@
+﻿<Window x:Class="Kassasysteem.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Kassasysteem"
+        mc:Ignorable="d" WindowStyle="None" ResizeMode="NoResize"
+        Title="MainWindow" Height="1040" Width="1920" WindowStartupLocation="CenterScreen" Icon="Logo.PNG">
+    <Grid Background="White">
+        <Rectangle HorizontalAlignment="Left" Height="30" Margin="518,24,-2,0" VerticalAlignment="Top" Width="1404" RenderTransformOrigin="0.5,0.5">
+            <Rectangle.Stroke>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#00000000" Offset="0"/>
+                    <GradientStop Offset="1"/>
+                </LinearGradientBrush>
+            </Rectangle.Stroke>
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFB2B2B2" Offset="0"/>
+                    <GradientStop Offset="1"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Rectangle HorizontalAlignment="Left" Height="30" Margin="5,505,0,0" VerticalAlignment="Top" Width="1044" RenderTransformOrigin="0.5,0.5">
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+            <Rectangle.Stroke>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#00000000" Offset="0"/>
+                    <GradientStop Offset="1"/>
+                </LinearGradientBrush>
+            </Rectangle.Stroke>
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFB2B2B2" Offset="0"/>
+                    <GradientStop Offset="1"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Rectangle HorizontalAlignment="Left" Height="1040" VerticalAlignment="Top" Width="520">
+            <Rectangle.Stroke>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFFFE800" Offset="0"/>
+                    <GradientStop Color="#FF00E2A4" Offset="1"/>
+                </LinearGradientBrush>
+            </Rectangle.Stroke>
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFFFE800" Offset="0"/>
+                    <GradientStop Color="#FF00E2A4" Offset="1"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Rectangle HorizontalAlignment="Left" Height="26" VerticalAlignment="Top" Width="1920" Fill="#FFF3F3F3" Stroke="#FFF3F3F3"/>
+        <Image Margin="1792,2,66,1016" Source="Image2.png" Stretch="Fill" RenderTransformOrigin="0.5,0.5"/>
+        <Image Margin="1856,2,2,1016" Source="Image1.png" Stretch="Fill" RenderTransformOrigin="0.5,0.5">
+            <Image.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="180"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Image.RenderTransform>
+        </Image>
+        <Label Content="Home" HorizontalAlignment="Left" Margin="1131,-5,0,0" VerticalAlignment="Top" Height="45" Width="577" FontSize="24" Foreground="#FF5F5F5F"/>
+        <Label Content="Banksysteem 1" HorizontalAlignment="Left" Margin="1744,999,0,0" VerticalAlignment="Top" Height="41" Width="176" FontSize="24" Foreground="#FF9E9E9E"/>
+        <Rectangle HorizontalAlignment="Left" Height="54" VerticalAlignment="Top" Width="520" Margin="0,26,0,0" Stroke="#FFBBBBBB">
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="White"/>
+                    <GradientStop Offset="1" Color="White"/>
+                    <GradientStop Color="#7FFFFFFF" Offset="0.5"/>
+                    <GradientStop Color="#99FFFFFF" Offset="0.15"/>
+                    <GradientStop Color="#99FFFFFF" Offset="0.85"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Label Content="Klanten" HorizontalAlignment="Left" Margin="5,29,0,0" VerticalAlignment="Top" Height="49" Width="510" FontSize="34" Foreground="#FF9E9E9E"/>
+        <Rectangle HorizontalAlignment="Left" Height="54" VerticalAlignment="Top" Width="520" Margin="0,79,0,0" Stroke="#FFBBBBBB">
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="White"/>
+                    <GradientStop Offset="1" Color="White"/>
+                    <GradientStop Color="#7FFFFFFF" Offset="0.5"/>
+                    <GradientStop Color="#99FFFFFF" Offset="0.15"/>
+                    <GradientStop Color="#99FFFFFF" Offset="0.85"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Label Content="Soorten rekeningen" HorizontalAlignment="Left" Margin="5,82,0,0" VerticalAlignment="Top" Height="49" Width="510" FontSize="34" Foreground="#FF9E9E9E"/>
+        <Rectangle HorizontalAlignment="Left" Height="54" VerticalAlignment="Top" Width="520" Margin="0,132,0,0" Stroke="#FFBBBBBB">
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="White"/>
+                    <GradientStop Offset="1" Color="White"/>
+                    <GradientStop Color="#7FFFFFFF" Offset="0.5"/>
+                    <GradientStop Color="#99FFFFFF" Offset="0.15"/>
+                    <GradientStop Color="#99FFFFFF" Offset="0.85"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Label Content="Rekeningen overzicht" HorizontalAlignment="Left" Margin="5,135,0,0" VerticalAlignment="Top" Height="49" Width="510" FontSize="34" Foreground="#FF9E9E9E"/>
+        <Label Content="Welkom bij Banksysteem 1.&#xD;&#xA;Je kunt hier klanten toevoegen, rekeningen openen, bekijken en bewerken." HorizontalAlignment="Left" Margin="525,31,0,0" VerticalAlignment="Top" Height="282" Width="1385" FontSize="24" Foreground="#FF5F5F5F"/>
+    </Grid>
+</Window>
