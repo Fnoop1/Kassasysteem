@@ -297,8 +297,6 @@ namespace Kassasysteem
 		
 		private EntityRef<CustomerAccount> _CustomerAccounts;
 		
-		private EntityRef<Account> _Accounts;
-		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -328,7 +326,6 @@ namespace Kassasysteem
 		public Customer()
 		{
 			this._CustomerAccounts = default(EntityRef<CustomerAccount>);
-			this._Accounts = default(EntityRef<Account>);
 			OnCreated();
 		}
 		
@@ -561,35 +558,6 @@ namespace Kassasysteem
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Customer_Account", Storage="_Accounts", ThisKey="CustomerId", OtherKey="AccountId", IsUnique=true, IsForeignKey=false)]
-		public Account Accounts
-		{
-			get
-			{
-				return this._Accounts.Entity;
-			}
-			set
-			{
-				Account previousValue = this._Accounts.Entity;
-				if (((previousValue != value) 
-							|| (this._Accounts.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Accounts.Entity = null;
-						previousValue.Customer = null;
-					}
-					this._Accounts.Entity = value;
-					if ((value != null))
-					{
-						value.Customer = this;
-					}
-					this.SendPropertyChanged("Accounts");
-				}
-			}
-		}
-		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -623,6 +591,8 @@ namespace Kassasysteem
 		
 		private EntityRef<Customer> _Customer;
 		
+		private EntityRef<Account> _Account;
+		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -636,6 +606,7 @@ namespace Kassasysteem
 		public CustomerAccount()
 		{
 			this._Customer = default(EntityRef<Customer>);
+			this._Account = default(EntityRef<Account>);
 			OnCreated();
 		}
 		
@@ -674,6 +645,10 @@ namespace Kassasysteem
 			{
 				if ((this._AccountId != value))
 				{
+					if (this._Account.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
 					this.OnAccountIdChanging(value);
 					this.SendPropertyChanging();
 					this._AccountId = value;
@@ -717,6 +692,40 @@ namespace Kassasysteem
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Account_CustomerAccount", Storage="_Account", ThisKey="AccountId", OtherKey="AccountId", IsForeignKey=true)]
+		public Account Account
+		{
+			get
+			{
+				return this._Account.Entity;
+			}
+			set
+			{
+				Account previousValue = this._Account.Entity;
+				if (((previousValue != value) 
+							|| (this._Account.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Account.Entity = null;
+						previousValue.CustomerAccounts = null;
+					}
+					this._Account.Entity = value;
+					if ((value != null))
+					{
+						value.CustomerAccounts = this;
+						this._AccountId = value.AccountId;
+					}
+					else
+					{
+						this._AccountId = default(int);
+					}
+					this.SendPropertyChanged("Account");
+				}
+			}
+		}
+		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -756,9 +765,9 @@ namespace Kassasysteem
 		
 		private decimal _bestedingslimiet;
 		
-		private EntityRef<Type> _Type;
+		private EntityRef<CustomerAccount> _CustomerAccounts;
 		
-		private EntityRef<Customer> _Customer;
+		private EntityRef<Type> _Type;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -780,8 +789,8 @@ namespace Kassasysteem
 		
 		public Account()
 		{
+			this._CustomerAccounts = default(EntityRef<CustomerAccount>);
 			this._Type = default(EntityRef<Type>);
-			this._Customer = default(EntityRef<Customer>);
 			OnCreated();
 		}
 		
@@ -796,10 +805,6 @@ namespace Kassasysteem
 			{
 				if ((this._AccountId != value))
 				{
-					if (this._Customer.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
 					this.OnAccountIdChanging(value);
 					this.SendPropertyChanging();
 					this._AccountId = value;
@@ -913,6 +918,35 @@ namespace Kassasysteem
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Account_CustomerAccount", Storage="_CustomerAccounts", ThisKey="AccountId", OtherKey="AccountId", IsUnique=true, IsForeignKey=false)]
+		public CustomerAccount CustomerAccounts
+		{
+			get
+			{
+				return this._CustomerAccounts.Entity;
+			}
+			set
+			{
+				CustomerAccount previousValue = this._CustomerAccounts.Entity;
+				if (((previousValue != value) 
+							|| (this._CustomerAccounts.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._CustomerAccounts.Entity = null;
+						previousValue.Account = null;
+					}
+					this._CustomerAccounts.Entity = value;
+					if ((value != null))
+					{
+						value.Account = this;
+					}
+					this.SendPropertyChanged("CustomerAccounts");
+				}
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Type_Account", Storage="_Type", ThisKey="TypeId", OtherKey="TypeId", IsForeignKey=true)]
 		public Type Type
 		{
@@ -943,40 +977,6 @@ namespace Kassasysteem
 						this._TypeId = default(int);
 					}
 					this.SendPropertyChanged("Type");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Customer_Account", Storage="_Customer", ThisKey="AccountId", OtherKey="CustomerId", IsForeignKey=true)]
-		public Customer Customer
-		{
-			get
-			{
-				return this._Customer.Entity;
-			}
-			set
-			{
-				Customer previousValue = this._Customer.Entity;
-				if (((previousValue != value) 
-							|| (this._Customer.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Customer.Entity = null;
-						previousValue.Accounts = null;
-					}
-					this._Customer.Entity = value;
-					if ((value != null))
-					{
-						value.Accounts = this;
-						this._AccountId = value.CustomerId;
-					}
-					else
-					{
-						this._AccountId = default(int);
-					}
-					this.SendPropertyChanged("Customer");
 				}
 			}
 		}

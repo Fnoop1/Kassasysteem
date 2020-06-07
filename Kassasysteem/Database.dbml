@@ -22,7 +22,6 @@
       <Column Name="email" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="telefoon" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
       <Association Name="Customer_CustomerAccount" Member="CustomerAccounts" ThisKey="CustomerId" OtherKey="CustomerId" Type="CustomerAccount" Cardinality="One" />
-      <Association Name="Customer_Account" Member="Accounts" ThisKey="CustomerId" OtherKey="AccountId" Type="Account" Cardinality="One" />
     </Type>
   </Table>
   <Table Name="dbo.CustomerAccount" Member="CustomerAccounts">
@@ -30,6 +29,7 @@
       <Column Name="CustomerId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="AccountId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Association Name="Customer_CustomerAccount" Member="Customer" ThisKey="CustomerId" OtherKey="CustomerId" Type="Customer" IsForeignKey="true" />
+      <Association Name="Account_CustomerAccount" Member="Account" ThisKey="AccountId" OtherKey="AccountId" Type="Account" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.Account" Member="Accounts">
@@ -40,8 +40,8 @@
       <Column Name="startdatum" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="saldo" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
       <Column Name="bestedingslimiet" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Association Name="Account_CustomerAccount" Member="CustomerAccounts" ThisKey="AccountId" OtherKey="AccountId" Type="CustomerAccount" Cardinality="One" />
       <Association Name="Type_Account" Member="Type" ThisKey="TypeId" OtherKey="TypeId" Type="Type" IsForeignKey="true" />
-      <Association Name="Customer_Account" Member="Customer" ThisKey="AccountId" OtherKey="CustomerId" Type="Customer" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>

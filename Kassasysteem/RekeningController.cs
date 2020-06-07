@@ -35,9 +35,9 @@ namespace Kassasysteem.Classes
         }
 
         //Function to get object 
-        public List<Account> get_rekeningen()
+        public List<CustomerAccount> get_rekeningen()
         {
-            return db.Accounts.ToList(); 
+            return db.CustomerAccounts.ToList(); 
         }
 
         //Function to get object 
@@ -53,38 +53,31 @@ namespace Kassasysteem.Classes
         }
     
         //Function to create object 
-        public bool add_KlantRekening(int sCustomer, decimal sBestedingslimiet, decimal sSaldo, string sStartdatum, int sTypeId)
+        public bool add_KlantRekening(Customer sCustomer, decimal sBestedingslimiet, decimal sSaldo, string sStartdatum, int sTypeId)
         {
                 //Creating object
                 Account a = new Account();
+
                 
                 //Give object values
                 a.bestedingslimiet = sBestedingslimiet;
                 a.startdatum = sStartdatum;
                 a.saldo = sSaldo;
                 a.TypeId = sTypeId;
-
-                //Insert object in queue
-                db.Accounts.InsertOnSubmit(a);
-
-                this.submitchanges();
-               
-                //Creating object
                 CustomerAccount ca = new CustomerAccount();
-
-                //Give object values
-                ca.AccountId = a.AccountId;
-                ca.CustomerId = sCustomer;
+                ca.Account = a;
+                ca.Customer = sCustomer;
 
                 //Insert object in queue
-                db.CustomerAccounts.InsertOnSubmit(ca);
+                db.CustomerAccounts.InsertOnSubmit(ca);     
+                
 
                 return this.submitchanges();
         }
 
 
         //function to update object
-        public bool update_KlantRekening(int aId , int sCustomer, decimal sBestedingslimiet, decimal sSaldo, string sStartdatum, int sTypeId) {
+        public bool update_KlantRekening(int aId ,Customer sCustomer, decimal sBestedingslimiet, decimal sSaldo, string sStartdatum, Type hetType) {
             //Get object
             Account a = (from b in db.Accounts
                           where b.AccountId == aId
@@ -94,24 +87,24 @@ namespace Kassasysteem.Classes
             a.bestedingslimiet = sBestedingslimiet;
             a.startdatum = sStartdatum;
             a.saldo = sSaldo;
-            a.TypeId = sTypeId;
+            a.Type = hetType;
 
             //Get object
             CustomerAccount c = (from d in db.CustomerAccounts
                                   where d.AccountId == aId
                                   select d).Single();
             //Give object new values
-            c.CustomerId = sCustomer;
+            c.Customer = sCustomer;
             
             return this.submitchanges();
 
         }
         
         //Function to delete object
-        public bool deleteRekening(Account KR)
+        public bool deleteRekening(CustomerAccount KR)
         {
             //delete selected object
-            db.Accounts.DeleteOnSubmit(KR);
+            db.CustomerAccounts.DeleteOnSubmit(KR);
             return this.submitchanges();
         }
 

@@ -62,7 +62,7 @@ namespace Kassasysteem
             Type soort = (Type)cbSoort.SelectedValue;
             int sTypeId = soort.TypeId;
 
-            r.add_KlantRekening(sCustomer, sBestedingslimiet, sSaldo, sStartdatum, sTypeId);
+            r.add_KlantRekening(customer, sBestedingslimiet, sSaldo, sStartdatum, sTypeId);
 
             dgRekening.ItemsSource = r.get_rekeningen();
             empty_attributes();
@@ -70,32 +70,31 @@ namespace Kassasysteem
 
         private void BtnRefresh_Copy_Click(object sender, RoutedEventArgs e)
         {
-            Account a = (Account)dgRekening.SelectedItem;
-            int sCustomer = 0;
+            CustomerAccount a = (CustomerAccount)dgRekening.SelectedItem;
+            Customer sCustomer = null;
             if (!string.IsNullOrEmpty(cbKlant.Text))
             {
-                Customer customer = (Customer)cbKlant.SelectedValue;
-                sCustomer = customer.CustomerId;
+                sCustomer = (Customer)cbKlant.SelectedValue;
             }
             else {
-                sCustomer = Convert.ToInt32((from b in this.db.CustomerAccounts where b.AccountId == a.AccountId select b.CustomerId).Single());
+                sCustomer = (db.Customers.Where(ca => ca.CustomerId == a.CustomerId)).Single();
             }
 
             decimal sBestedingslimiet = Convert.ToDecimal(txtBestedingslimiet.Text);
             decimal sSaldo = Convert.ToDecimal(txtSaldo.Text);
             string sStartdatum = dpStartdatum.ToString();
-            int sTypeId = 0;
+            Type hetType = null;
             if (!string.IsNullOrEmpty(cbSoort.Text))
             {
-                Type soort = (Type)cbSoort.SelectedValue;
-                sTypeId = soort.TypeId;
+                hetType = (Type)cbSoort.SelectedValue;
+                //sTypeId = soort.TypeId;
             }
             else
             {
-                sTypeId = a.TypeId;
+                hetType = a.Account.Type;
             }
 
-            r.update_KlantRekening(a.AccountId, sCustomer, sBestedingslimiet, sSaldo, sStartdatum, sTypeId);
+            r.update_KlantRekening(a.AccountId, sCustomer, sBestedingslimiet, sSaldo, sStartdatum, hetType);
 
             dgRekening.ItemsSource = r.get_rekeningen();
             empty_attributes();
@@ -110,9 +109,9 @@ namespace Kassasysteem
 
         private void BtnDelete_Copy_Click(object sender, RoutedEventArgs e)
         {
-            Account a = (Account)dgRekening.SelectedItem;
-            dgRekening.ItemsSource = r.get_rekeningen();
+            CustomerAccount a = (CustomerAccount)dgRekening.SelectedItem;
             r.deleteRekening(a);
+            dgRekening.ItemsSource = r.get_rekeningen();
             empty_attributes();
         }
         //function to empty all attributes
@@ -131,13 +130,13 @@ namespace Kassasysteem
 
         private void dgRekening_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-            Account a = (Account)dgRekening.SelectedItem;
-            txtBestedingslimiet.Text = a.bestedingslimiet.ToString();
-            txtSaldo.Text = a.saldo.ToString();
-            dpStartdatum.Text = a.startdatum.ToString();
+            CustomerAccount a = (CustomerAccount)dgRekening.SelectedItem;
+            txtBestedingslimiet.Text = a.Account.bestedingslimiet.ToString();
+            txtSaldo.Text = a.Account.saldo.ToString();
+            dpStartdatum.Text = a.Account.startdatum.ToString();
             int sCustomer = r.get_customerId(a.AccountId);
             cbKlant.Text = r.get_cbKlant(sCustomer);
-            cbSoort.Text = r.get_cbSoort(a.TypeId);
+            cbSoort.Text = r.get_cbSoort(a.Account.Type.TypeId);
         }
     }
 }

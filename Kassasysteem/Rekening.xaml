@@ -142,10 +142,10 @@
         <DataGrid x:Name="dgRekening" HorizontalAlignment="Left" Height="999" Margin="525,31,0,0" VerticalAlignment="Top" Width="1385" BorderBrush="#FF63E256" Foreground="#FF4B4B4B" FontSize="20" SelectionChanged="DgRekening_SelectionChanged" MouseDoubleClick="dgRekening_MouseDoubleClick" AutoGenerateColumns="False">
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding Customer.voornaam}" ClipboardContentBinding="{x:Null}" Header="Klant"/>
-                <DataGridTextColumn Binding="{Binding Type.naam}" ClipboardContentBinding="{x:Null}" Header="Rekeningstype"/>
-                <DataGridTextColumn Binding="{Binding startdatum}" ClipboardContentBinding="{x:Null}" Header="Datum"/>
-                <DataGridTextColumn Binding="{Binding saldo}" ClipboardContentBinding="{x:Null}" Header="Saldo"/>
-                <DataGridTextColumn Binding="{Binding bestedingslimiet}" ClipboardContentBinding="{x:Null}" Header="Bestedingslimiet"/>
+                <DataGridTextColumn Binding="{Binding Account.Type.naam}" ClipboardContentBinding="{x:Null}" Header="Rekeningstype"/>
+                <DataGridTextColumn Binding="{Binding Account.startdatum}" ClipboardContentBinding="{x:Null}" Header="Datum"/>
+                <DataGridTextColumn Binding="{Binding Account.saldo}" ClipboardContentBinding="{x:Null}" Header="Saldo"/>
+                <DataGridTextColumn Binding="{Binding Account.bestedingslimiet}" ClipboardContentBinding="{x:Null}" Header="Bestedingslimiet"/>
             </DataGrid.Columns>
         </DataGrid>
         <Button Content="" HorizontalAlignment="Left" Margin="1792,2,0,0" VerticalAlignment="Top" Width="62" Height="22" Background="#00DDDDDD" BorderBrush="#00707070" Click="Button_Click_1" OpacityMask="#00000000" Cursor="Hand"/>
