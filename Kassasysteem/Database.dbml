@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="KassaApp" Class="DatabaseDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=LAPTOP-7JBTC30N\SQLEXPRESS;Initial Catalog=KassaApp;Integrated Security=True" SettingsObjectName="Kassasysteem.Properties.Settings" SettingsPropertyName="KassaAppConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Type" Member="Types">
+    <Type Name="Type">
+      <Column Name="TypeId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="naam" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="rente" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="maguitgeven" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+      <Association Name="Type_Account" Member="Accounts" ThisKey="TypeId" OtherKey="TypeId" Type="Account" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Customer" Member="Customers">
+    <Type Name="Customer">
+      <Column Name="CustomerId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="voornaam" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="achternaam" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="leeftijd" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="woonplaats" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="adres" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="bsn" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="geboortedatum" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="email" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="telefoon" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="Customer_CustomerAccount" Member="CustomerAccounts" ThisKey="CustomerId" OtherKey="CustomerId" Type="CustomerAccount" Cardinality="One" />
+      <Association Name="Customer_Account" Member="Accounts" ThisKey="CustomerId" OtherKey="AccountId" Type="Account" Cardinality="One" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CustomerAccount" Member="CustomerAccounts">
+    <Type Name="CustomerAccount">
+      <Column Name="CustomerId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="AccountId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="Customer_CustomerAccount" Member="Customer" ThisKey="CustomerId" OtherKey="CustomerId" Type="Customer" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Account" Member="Accounts">
+    <Type Name="Account">
+      <Column Name="AccountId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CustomerId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TypeId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="startdatum" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="saldo" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="bestedingslimiet" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Association Name="Type_Account" Member="Type" ThisKey="TypeId" OtherKey="TypeId" Type="Type" IsForeignKey="true" />
+      <Association Name="Customer_Account" Member="Customer" ThisKey="AccountId" OtherKey="CustomerId" Type="Customer" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

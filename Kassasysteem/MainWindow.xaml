@@ -21,7 +21,7 @@
                 </LinearGradientBrush>
             </Rectangle.Fill>
         </Rectangle>
-        <Rectangle HorizontalAlignment="Left" Height="30" Margin="5,505,0,0" VerticalAlignment="Top" Width="1044" RenderTransformOrigin="0.5,0.5">
+        <Rectangle HorizontalAlignment="Left" Height="30" Margin="9,505,0,0" VerticalAlignment="Top" Width="1044" RenderTransformOrigin="0.5,0.5">
             <Rectangle.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -69,7 +69,7 @@
                 </TransformGroup>
             </Image.RenderTransform>
         </Image>
-        <Label Content="Home" HorizontalAlignment="Left" Margin="1131,-5,0,0" VerticalAlignment="Top" Height="45" Width="577" FontSize="24" Foreground="#FF5F5F5F"/>
+        <Label Content="Home" HorizontalAlignment="Left" Margin="1131,-7,0,0" VerticalAlignment="Top" Height="45" Width="577" FontSize="24" Foreground="#FF5F5F5F"/>
         <Label Content="Banksysteem 1" HorizontalAlignment="Left" Margin="1744,999,0,0" VerticalAlignment="Top" Height="41" Width="176" FontSize="24" Foreground="#FF9E9E9E"/>
         <Rectangle HorizontalAlignment="Left" Height="54" VerticalAlignment="Top" Width="520" Margin="0,26,0,0" Stroke="#FFBBBBBB">
             <Rectangle.Fill>
@@ -82,7 +82,7 @@
                 </LinearGradientBrush>
             </Rectangle.Fill>
         </Rectangle>
-        <Label Content="Klanten" HorizontalAlignment="Left" Margin="5,29,0,0" VerticalAlignment="Top" Height="49" Width="510" FontSize="34" Foreground="#FF9E9E9E"/>
+        <Label Content="Klanten" HorizontalAlignment="Left" Margin="5,29,0,0" VerticalAlignment="Top" Height="49" Width="510" FontSize="34" Foreground="#FF575757"/>
         <Rectangle HorizontalAlignment="Left" Height="54" VerticalAlignment="Top" Width="520" Margin="0,79,0,0" Stroke="#FFBBBBBB">
             <Rectangle.Fill>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -94,8 +94,8 @@
                 </LinearGradientBrush>
             </Rectangle.Fill>
         </Rectangle>
-        <Label Content="Soorten rekeningen" HorizontalAlignment="Left" Margin="5,82,0,0" VerticalAlignment="Top" Height="49" Width="510" FontSize="34" Foreground="#FF9E9E9E"/>
-        <Rectangle HorizontalAlignment="Left" Height="54" VerticalAlignment="Top" Width="520" Margin="0,132,0,0" Stroke="#FFBBBBBB">
+        <Label Content="Rekeningen" HorizontalAlignment="Left" Margin="5,82,0,0" VerticalAlignment="Top" Height="49" Width="510" FontSize="34" Foreground="#FF575757"/>
+        <Rectangle HorizontalAlignment="Left" Height="54" VerticalAlignment="Top" Width="520" Margin="-3155,132,0,0" Stroke="#FFBBBBBB">
             <Rectangle.Fill>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="White"/>
@@ -106,7 +106,12 @@
                 </LinearGradientBrush>
             </Rectangle.Fill>
         </Rectangle>
-        <Label Content="Rekeningen overzicht" HorizontalAlignment="Left" Margin="5,135,0,0" VerticalAlignment="Top" Height="49" Width="510" FontSize="34" Foreground="#FF9E9E9E"/>
+        <Label Content="Overzicht" HorizontalAlignment="Left" Margin="-3145,132,0,0" VerticalAlignment="Top" Height="49" Width="510" FontSize="34" Foreground="#FF575757"/>
         <Label Content="Welkom bij Banksysteem 1.&#xD;&#xA;Je kunt hier klanten toevoegen, rekeningen openen, bekijken en bewerken." HorizontalAlignment="Left" Margin="525,31,0,0" VerticalAlignment="Top" Height="282" Width="1385" FontSize="24" Foreground="#FF5F5F5F"/>
+        <Button Content="" HorizontalAlignment="Left" Margin="1792,2,0,0" VerticalAlignment="Top" Width="62" Height="22" Background="#00DDDDDD" BorderBrush="#00707070" Click="Button_Click_1" OpacityMask="#00000000" Cursor="Hand"/>
+        <Button Content="" HorizontalAlignment="Left" Margin="1856,2,0,0" VerticalAlignment="Top" Width="62" Height="22" Background="#00DDDDDD" BorderBrush="#00707070" Click="Button_Click" OpacityMask="#00000000" Cursor="Hand"/>
+        <Button Content="" HorizontalAlignment="Left" Margin="0,26,0,0" VerticalAlignment="Top" Width="520" Height="54" Background="#00DDDDDD" BorderBrush="#00707070" Click="Button_Click_2" OpacityMask="#00000000" Cursor="Hand"/>
+        <Button Content="" HorizontalAlignment="Left" Margin="0,79,0,0" VerticalAlignment="Top" Width="520" Height="54" Background="#00DDDDDD" BorderBrush="#00707070" Click="Button_Click_3" OpacityMask="#00000000" Cursor="Hand"/>
+        <Button Content="" HorizontalAlignment="Left" Margin="-3155,132,0,0" VerticalAlignment="Top" Width="520" Height="54" Background="#00DDDDDD" BorderBrush="#00707070" Click="Button_Click_4" OpacityMask="#00000000" Cursor="Hand"/>
     </Grid>
 </Window>

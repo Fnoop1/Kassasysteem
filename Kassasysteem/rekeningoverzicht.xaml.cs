@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Kassasysteem.Classes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,19 +11,25 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace Kassasysteem
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for rekeningoverzicht.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class rekeningoverzicht : Window
     {
-        public MainWindow()
+        private RekeningoverzichtController r;
+        private DatabaseDataContext db;
+
+        public rekeningoverzicht()
         {
             InitializeComponent();
+            db = new DatabaseDataContext();
+            r = new RekeningoverzichtController(db);
+            dgRekeningoverzicht.ItemsSource = r.get_rekeningen_klanten();
+        
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -37,23 +44,21 @@ namespace Kassasysteem
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
-            Klant myWindow = new Klant();
+            MainWindow myWindow = new MainWindow();
             myWindow.Show();
             this.Close();
         }
 
         private void Button_Click_3(object sender, RoutedEventArgs e)
         {
-            Rekening myWindow = new Rekening();
+            MainWindow myWindow = new MainWindow();
             myWindow.Show();
             this.Close();
         }
 
-        private void Button_Click_4(object sender, RoutedEventArgs e)
+        private void dgRekeningoverzicht_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            rekeningoverzicht myWindow = new rekeningoverzicht();
-            myWindow.Show();
-            this.Close();
+
         }
     }
 }

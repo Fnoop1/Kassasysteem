@@ -1,0 +1,157 @@
+﻿<Window x:Class="Kassasysteem.rekeningoverzicht"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Kassasysteem"
+        mc:Ignorable="d" WindowStyle="None" ResizeMode="NoResize"
+        Title="rekeningoverzicht" Height="1040" Width="1920" WindowStartupLocation="CenterScreen" Icon="Logo.PNG">
+    <Grid>
+        <Rectangle HorizontalAlignment="Left" Height="30" Margin="288,1026,-1,-16" VerticalAlignment="Top" Width="1633" RenderTransformOrigin="0.5,0.5">
+            <Rectangle.Stroke>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#00000000" Offset="0"/>
+                    <GradientStop Offset="1"/>
+                </LinearGradientBrush>
+            </Rectangle.Stroke>
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFB2B2B2" Offset="0"/>
+                    <GradientStop Offset="1"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+
+        <Rectangle HorizontalAlignment="Left" Height="30" Margin="1416,521,-506,0" VerticalAlignment="Top" Width="1010" RenderTransformOrigin="0.5,0.5">
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="270"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+            <Rectangle.Stroke>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#00000000" Offset="0"/>
+                    <GradientStop Offset="1"/>
+                </LinearGradientBrush>
+            </Rectangle.Stroke>
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFB2B2B2" Offset="0"/>
+                    <GradientStop Offset="1"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+
+        <Rectangle HorizontalAlignment="Left" Height="30" Margin="271,24,-2,0" VerticalAlignment="Top" Width="1651" RenderTransformOrigin="0.5,0.5">
+            <Rectangle.Stroke>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#00000000" Offset="0"/>
+                    <GradientStop Offset="1"/>
+                </LinearGradientBrush>
+            </Rectangle.Stroke>
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFB2B2B2" Offset="0"/>
+                    <GradientStop Offset="1"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Rectangle HorizontalAlignment="Left" Height="30" Margin="-228,505,0,0" VerticalAlignment="Top" Width="1044" RenderTransformOrigin="0.5,0.5">
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+            <Rectangle.Stroke>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#00000000" Offset="0"/>
+                    <GradientStop Offset="1"/>
+                </LinearGradientBrush>
+            </Rectangle.Stroke>
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFB2B2B2" Offset="0"/>
+                    <GradientStop Offset="1"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Rectangle HorizontalAlignment="Left" Height="1040" VerticalAlignment="Top" Width="283">
+            <Rectangle.Stroke>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFFFE800" Offset="0"/>
+                    <GradientStop Color="#FF00E2A4" Offset="1"/>
+                </LinearGradientBrush>
+            </Rectangle.Stroke>
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFFFE800" Offset="0"/>
+                    <GradientStop Color="#FF00E2A4" Offset="1"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Rectangle HorizontalAlignment="Left" Height="26" VerticalAlignment="Top" Width="1920" Fill="#FFF3F3F3" Stroke="#FFF3F3F3"/>
+        <Image Margin="1792,2,66,1016" Source="Image2.png" Stretch="Fill" RenderTransformOrigin="0.5,0.5"/>
+        <Image Margin="1856,2,2,1016" Source="Image1.png" Stretch="Fill" RenderTransformOrigin="0.5,0.5">
+            <Image.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="180"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Image.RenderTransform>
+        </Image>
+        <Label Content="Rekeningoverzicht" HorizontalAlignment="Left" Margin="980,-7,0,0" VerticalAlignment="Top" Height="45" Width="728" FontSize="24" Foreground="#FF5F5F5F"/>
+        <Rectangle HorizontalAlignment="Left" Height="54" VerticalAlignment="Top" Width="283" Margin="0,26,0,0" Stroke="#FFBBBBBB">
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="White"/>
+                    <GradientStop Offset="1" Color="White"/>
+                    <GradientStop Color="#7FFFFFFF" Offset="0.5"/>
+                    <GradientStop Color="#99FFFFFF" Offset="0.15"/>
+                    <GradientStop Color="#99FFFFFF" Offset="0.85"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Label Content="Naar home" HorizontalAlignment="Left" Margin="5,29,0,0" VerticalAlignment="Top" Height="49" Width="278" FontSize="34" Foreground="#FF575757"/>
+        <DataGrid x:Name="dgRekeningoverzicht" HorizontalAlignment="Left" Height="999" Margin="288,31,0,0" VerticalAlignment="Top" Width="1622" BorderBrush="#FF63E256" Foreground="#FF4B4B4B" FontSize="20" AutoGenerateColumns="False" SelectionChanged="dgRekeningoverzicht_SelectionChanged">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding voornaam}" ClipboardContentBinding="{x:Null}" Header="Voornaam"/>
+                <DataGridTextColumn Binding="{Binding achternaam}" ClipboardContentBinding="{x:Null}" Header="Achternaam"/>
+                <DataGridTextColumn Binding="{Binding bsn}" ClipboardContentBinding="{x:Null}" Header="Bsn nummer"/>
+                <DataGridTextColumn Binding="{Binding naam}" ClipboardContentBinding="{x:Null}" Header="Soort rekening"/>
+                <DataGridTextColumn Binding="{Binding saldo}" ClipboardContentBinding="{x:Null}" Header="Saldo"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Content="" HorizontalAlignment="Left" Margin="1792,2,0,0" VerticalAlignment="Top" Width="62" Height="22" Background="#00DDDDDD" BorderBrush="#00707070" Click="Button_Click_1" OpacityMask="#00000000" Cursor="Hand"/>
+        <Button Content="" HorizontalAlignment="Left" Margin="1856,2,0,0" VerticalAlignment="Top" Width="62" Height="22" Background="#00DDDDDD" BorderBrush="#00707070" Click="Button_Click" OpacityMask="#00000000" Cursor="Hand"/>
+        <Button Content="" HorizontalAlignment="Left" Margin="0,26,0,0" VerticalAlignment="Top" Width="283" Height="54" Background="#00DDDDDD" BorderBrush="#00707070" OpacityMask="#00000000" Click="Button_Click_3" Cursor="Hand"/>
+        <Rectangle HorizontalAlignment="Left" Height="956" Margin="2,82,0,0" Stroke="#00BBBBBB" VerticalAlignment="Top" Width="279" Fill="#66000000"/>
+        <Rectangle HorizontalAlignment="Left" Height="45" Margin="2,82,0,0" Stroke="#00BBBBBB" VerticalAlignment="Top" Width="279">
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                    <LinearGradientBrush.RelativeTransform>
+                        <TransformGroup>
+                            <ScaleTransform CenterY="0.5" CenterX="0.5"/>
+                            <SkewTransform CenterY="0.5" CenterX="0.5"/>
+                            <RotateTransform Angle="5" CenterY="0.5" CenterX="0.5"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </LinearGradientBrush.RelativeTransform>
+                    <GradientStop Color="#99000000" Offset="0"/>
+                    <GradientStop Color="#66000000" Offset="1"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Image Margin="0,80,1871,911" Source="info.png" Stretch="Fill"/>
+        <Label Content="Info" HorizontalAlignment="Left" Margin="49,87,0,0" VerticalAlignment="Top" Height="39" Width="181" FontSize="24" Foreground="White"/>
+        <Label Content="Op deze pagina kun je &#xD;&#xA;de rekeningen bekijken&#xD;&#xA;die aan klanten zijn &#xD;&#xA;gekoppeld." HorizontalAlignment="Left" Margin="7,133,0,0" VerticalAlignment="Top" Height="370" Width="274" FontSize="24" Foreground="White"/>
+
+    </Grid>
+</Window>
